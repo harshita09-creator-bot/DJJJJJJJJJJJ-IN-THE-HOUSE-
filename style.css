@@ -1,0 +1,16 @@
+.heading{
+    font-size: 20px;
+    width: 100%;
+    margin: 0;
+}
+
+.subtitle{
+    font-size: 15px;
+    color: black;
+}
+
+canvas{
+    border-radius: 15px;
+    border: 10px solid white;
+    box-shadow: 10px 10px 10px lightslategray;
+}
