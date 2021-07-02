@@ -4,6 +4,9 @@ leftWristX = "";
 leftWristY = "";
 rightWristY = "";
 rightWristX = "";
+scoreleft = "0";
+scoreright = "0";
+status = "";
 
 function preload(){
     song = loadSound('music2.mp3');
@@ -29,6 +32,8 @@ function gotPoses(results){
 
     if(results.length > 0){
         console.log(results);
+        scoreleft = results[0].pose.keypoints[9].score;
+        console.log(scoreleft);
 
         leftWristX = results[0].pose.leftWrist.x
         leftWristY = results[0].pose.leftWrist.y
@@ -44,4 +49,25 @@ function gotPoses(results){
 
 function draw(){
     image(video,0,0,550,550);
+
+    firstsong = song.isPlaying();
+
+    fill("#FF0000");
+    stroke("#FF0000");
+
+    if(scoreleft > 0.2 ){
+
+        circle(leftWristX - 400,leftWristY - 400,20);
+        song1.stop();
+
+        if(firstsong == "false"){
+
+            song.play();
+            document.getElementById("song").innerHTML = "Dinero"
+
+        }
+    }
+
+
 }
+
