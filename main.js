@@ -51,6 +51,7 @@ function draw(){
     image(video,0,0,550,550);
 
     firstsong = song.isPlaying();
+    secondsong = song1.isPlaying();
 
     fill("#FF0000");
     stroke("#FF0000");
@@ -58,12 +59,12 @@ function draw(){
     if(scoreleft > 0.2 ){
 
         circle(leftWristX - 400,leftWristY - 400,20);
-        song1.stop();
+        song.stop();
 
-        if(firstsong == "false"){
+        if(firstsong == false){
 
-            song.play();
-            document.getElementById("song").innerHTML = "Dinero"
+            song1.play();
+            document.getElementById("name").innerHTML = "Dinero"
 
         }
     }
