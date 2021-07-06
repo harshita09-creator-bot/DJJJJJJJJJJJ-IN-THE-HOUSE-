@@ -65,6 +65,7 @@ function draw(){
 
         if(firstsong == false){
 
+            song1.stop();
             song1.play();
             document.getElementById("name").innerHTML = "Dinero"
 
@@ -79,6 +80,7 @@ function draw(){
 
         if(secondsong == false){
 
+            song.stop();
             song.play();
             document.getElementById("name").innerHTML = "Jalebi Baby"
 
