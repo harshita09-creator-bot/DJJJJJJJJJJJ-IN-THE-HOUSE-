@@ -33,7 +33,9 @@ function gotPoses(results){
     if(results.length > 0){
         console.log(results);
         scoreleft = results[0].pose.keypoints[9].score;
+        scoreright = results[0].pose.keypoints[10].score;
         console.log(scoreleft);
+        console.log(scoreright);
 
         leftWristX = results[0].pose.leftWrist.x
         leftWristY = results[0].pose.leftWrist.y
@@ -65,6 +67,20 @@ function draw(){
 
             song1.play();
             document.getElementById("name").innerHTML = "Dinero"
+
+        }
+    }
+
+
+    if(scoreright > 0.2 ){
+
+        circle(rightWristX - 400,rightWristY - 400,20);
+        song1.stop();
+
+        if(secondsong == false){
+
+            song.play();
+            document.getElementById("name").innerHTML = "Jalebi Baby"
 
         }
     }
